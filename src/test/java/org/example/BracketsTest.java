@@ -24,4 +24,13 @@ public class BracketsTest {
 
         assertFalse(result);
     }
+
+    @Test
+    void startingWithClosingBracketShouldBeInvalid() {
+        Brackets brackets = new Brackets();
+
+        boolean result = brackets.isValid(")(");
+
+        assertFalse(result);
+    }
 }
