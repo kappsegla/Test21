@@ -10,14 +10,19 @@ public class Brackets {
     }
 
     private boolean bracketCount(String s) {
-        int count = 0;
+        int countRound = 0;
+        int countSquare = 0;
         for (int i = 0; i < s.length(); i++) {
-            if (s.charAt(i) == '(' || s.charAt(i) == '[')
-                count++;
-            else
-                count--;
+            if (s.charAt(i) == '(')
+                countRound++;
+            if (s.charAt(i) == '[')
+                countSquare++;
+            if (s.charAt(i) == ')')
+                countRound--;
+            if (s.charAt(i) == ']')
+                countSquare--;
 
-            if (count < 0)
+            if (countRound < 0 || countSquare < 0)
                 return true;
         }
         return false;

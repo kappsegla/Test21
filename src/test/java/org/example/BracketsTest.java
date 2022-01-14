@@ -51,4 +51,13 @@ public class BracketsTest {
 
         assertTrue(result);
     }
+
+    @Test
+    void incorrectStartAndCloseBracketsShouldFail() {
+        Brackets brackets = new Brackets();
+
+        boolean result = brackets.isValid("([))");
+
+        assertFalse(result);
+    }
 }
