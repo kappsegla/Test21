@@ -10,9 +10,7 @@ public class Brackets {
         for (char c : s.toCharArray()) {
             if (isOpeningBracket(c))
                 stack.push(c);
-            else if (stack.isEmpty())
-                return false;
-            else if (isNotMatchingBrackets(c, stack.pop()))
+            else if (stack.isEmpty() || isNotMatchingBrackets(c, stack.pop()))
                 return false;
         }
         return stack.isEmpty();
