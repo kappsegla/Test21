@@ -42,4 +42,13 @@ public class BracketsTest {
 
         assertFalse(result);
     }
+
+    @Test
+    void twoBracketTypesShouldBeValid() {
+        Brackets brackets = new Brackets();
+
+        boolean result = brackets.isValid("([])");
+
+        assertTrue(result);
+    }
 }
