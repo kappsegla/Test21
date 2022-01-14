@@ -1,30 +1,32 @@
 package org.example;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 public class Brackets {
     public boolean isValid(String s) {
-        if (s.length() % 2 == 1)
-            return false;
+        Deque<Character> stack = new ArrayDeque<>();
 
-        if (bracketCount(s)) return false;
-        return true;
+        for (char c : s.toCharArray()) {
+            if (isOpeningBracket(c))
+                stack.push(c);
+            else if (stack.isEmpty())
+                return false;
+            else if (isNotMatchingBrackets(c, stack.pop()))
+                return false;
+        }
+        return stack.isEmpty();
     }
 
-    private boolean bracketCount(String s) {
-        int countRound = 0;
-        int countSquare = 0;
-        for (int i = 0; i < s.length(); i++) {
-            if (s.charAt(i) == '(')
-                countRound++;
-            if (s.charAt(i) == '[')
-                countSquare++;
-            if (s.charAt(i) == ')')
-                countRound--;
-            if (s.charAt(i) == ']')
-                countSquare--;
+    private boolean isOpeningBracket(char c) {
+        return c == '(' || c == '[' || c == '{';
+    }
 
-            if (countRound < 0 || countSquare < 0)
-                return true;
-        }
-        return !(countRound == 0 && countSquare == 0);
+    private boolean isNotMatchingBrackets(char closingBracket, char openingBracket) {
+        if (closingBracket == ')' && openingBracket == '(')
+            return false;
+        if (closingBracket == ']' && openingBracket == '[')
+            return false;
+        return closingBracket != '}' || openingBracket != '{';
     }
 }
