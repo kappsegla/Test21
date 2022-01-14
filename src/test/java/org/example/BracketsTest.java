@@ -78,4 +78,13 @@ public class BracketsTest {
 
         assertFalse(result);
     }
+
+    @Test
+    void complicatedBracketsShouldBeValid() {
+        Brackets brackets = new Brackets();
+
+        boolean result = brackets.isValid("([{}([()])])");
+
+        assertTrue(result);
+    }
 }
