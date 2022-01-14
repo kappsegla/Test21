@@ -25,6 +25,6 @@ public class Brackets {
             if (countRound < 0 || countSquare < 0)
                 return true;
         }
-        return false;
+        return !(countRound == 0 && countSquare == 0);
     }
 }

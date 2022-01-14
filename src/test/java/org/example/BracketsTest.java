@@ -60,4 +60,13 @@ public class BracketsTest {
 
         assertFalse(result);
     }
+
+    @Test
+    void onlyOpeningBracketsShouldFail() {
+        Brackets brackets = new Brackets();
+
+        boolean result = brackets.isValid("((((");
+
+        assertFalse(result);
+    }
 }
