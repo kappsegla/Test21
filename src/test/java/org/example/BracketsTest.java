@@ -33,4 +33,13 @@ public class BracketsTest {
 
         assertFalse(result);
     }
+
+    @Test
+    void incorrectlyPositionedBracketsLaterInSequenceShouldBeInvalid() {
+        Brackets brackets = new Brackets();
+
+        boolean result = brackets.isValid("())(");
+
+        assertFalse(result);
+    }
 }
