@@ -25,7 +25,7 @@ public class Testability {
 
 
     public boolean isAdressValid(String s) {
-        return false;
+        return s.contains("@");
     }
 }
 
