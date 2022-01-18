@@ -22,5 +22,10 @@ public class Testability {
             logger.log(LogLevel.ERROR, "An error occured: " + ex);
         }
     }
+
+
+    public boolean isAdressValid(String s) {
+        return false;
+    }
 }
 
