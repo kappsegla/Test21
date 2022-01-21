@@ -20,16 +20,13 @@
         <repository>
             <id>github</id>
             <url>https://maven.pkg.github.com/kappsegla/library22</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
         </repository>
     </repositories>
     <dependencies>
         <dependency>
             <groupId>org.example</groupId>
             <artifactId>library22</artifactId>
-            <version>1.0</version>
+            <version>1.1</version>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
