@@ -31,7 +31,7 @@ public class CalcDemo {
     public String greeting() {
         if (timeProvider.getHourOfTheDay() < 10)
             return "God morgon";
-        else
+        
             return "God dag";
     }
 
